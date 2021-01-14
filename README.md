@@ -1,13 +1,17 @@
 # Project Name
-This is a full front-end capstone of AirBnB's property listing page. The component in this repo are tied to the service of the Map section. 
+This is a full front-end capstone of AirBnB's property listing page. The component in this repo are tied to the service of the Entire house hosted by section. 
 
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/FEC-corgis/Paul-Proxy
+  - https://github.com/FEC-corgis/Paul-Service-Entire_house
+  - https://github.com/FEC-corgis/Dane-Service
+  - https://github.com/FEC-corgis/Dane-Proxy
+  - https://github.com/FEC-corgis/Jenny-FEC-service
+  - https://github.com/FEC-corgis/Jenny-FEC-proxy
+  - https://github.com/FEC-corgis/availability-service-Slava
+  - https://github.com/FEC-corgis/amenities-service-Slava
 
 ## Table of Contents
 
