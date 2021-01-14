@@ -47,12 +47,12 @@ CREATE TABLE Sanitation(
     FOREIGN KEY (id) REFERENCES property_details(id) 
 );
 
-Create TABLE Property_Rules(
-    FOREIGN KEY (id) REFERENCES Property_details(id) 
-    FOREIGN KEY (id) REFERENCES Rules(id) 
-);
+-- Create TABLE Property_Rules(
+--     FOREIGN KEY (id) REFERENCES Property_details(id) 
+--     FOREIGN KEY (id) REFERENCES Rules(id) 
+-- );
 
-Create TABLE Property_Sanitation(
-    FOREIGN KEY (id) REFERENCES Property_details(id) 
-    FOREIGN KEY (id) REFERENCES Saniation(id) 
-);
+-- Create TABLE Property_Sanitation(
+--     FOREIGN KEY (id) REFERENCES Property_details(id) 
+--     FOREIGN KEY (id) REFERENCES Saniation(id) 
+-- );
