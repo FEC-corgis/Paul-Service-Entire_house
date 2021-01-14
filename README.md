@@ -1,6 +1,6 @@
 # Project Name
+This is a full front-end capstone of AirBnB's property listing page. The component in this repo are tied to the service of the Map section. 
 
-> Project description
 
 ## Related Projects
 
