@@ -1,11 +1,11 @@
-CREATE DATABASE property_details;
+CREATE DATABASE property;
 
-USE property_details;
+USE property;
 
 CREATE TABLE Property_details(
-    id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Property_details_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     property_type text NOT NULL,  -- Apartment, House, Secondary Unit, Unique Space, Bed and breakfast, Boutique hotel
-    property_narrow_type text NOT NULL 
+    property_narrow_type text NOT NULL,
     -- Apartment(Apartment, Condominium, Serviced apartment, Loft), 
     -- House(House, Villa, Townhouse, Cottage, Bungalow, Cabin), 
     -- Secondary Unit(Guest Suite, Guesthouse, Farm stay),
@@ -16,6 +16,8 @@ CREATE TABLE Property_details(
     dedicated_guest_space BOOLEAN, -- setup for guest or host has belongings there
     registered_business BOOLEAN,
     cancellation_duration integer,
+    min_length_stay integer,
+    max_length_stay integer,
     guest_capacity integer NOT NULL,
     rooms integer NOT NULL,
     bathrooms integer NOT NULL,
@@ -23,7 +25,7 @@ CREATE TABLE Property_details(
 );
 
 CREATE TABLE Rules(
-    id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Rules_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     check_in_time DATETIME NOT NULL,
     check_out_time DATETIME NOT NULL,
     self_check_out BOOLEAN,
@@ -33,18 +35,20 @@ CREATE TABLE Rules(
     infants BOOLEAN,
     children_suitable BOOLEAN,
     additional_rules JSON, -- to add an array of additional rules
-    FOREIGN KEY (id) REFERENCES property_details(id) 
+    property_details_id integer,
+    FOREIGN KEY (property_details_id) REFERENCES Property_details(property_details_id) 
 );
 
 CREATE TABLE Sanitation(
-    id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Sanitation_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     sanitize_surfaces BOOLEAN,
     approved_products BOOLEAN,
     thoroughly_clean BOOLEAN,
     mask_glove BOOLEAN,
     wash_linen BOOLEAN,
     local_guidance BOOLEAN,
-    FOREIGN KEY (id) REFERENCES property_details(id) 
+    property_details_id integer,
+    FOREIGN KEY (property_details_id) REFERENCES Property_details(property_details_id) 
 );
 
 -- Create TABLE Property_Rules(
