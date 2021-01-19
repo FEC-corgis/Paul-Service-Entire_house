@@ -11,12 +11,6 @@ const connection = mysql.createConnection({
 connection.connect((err)=>{
   if (err) { throw err; }
   console.log('Connected to database');
-//   connection.query('delete from Property_details where Property_details_id = 1', (err, result)=>{
-//     if (err) {
-//       throw err;
-//     }
-//     console.log(result.affectedRows);
-//   });
   seed.seedPropertyDetails();
 });
 

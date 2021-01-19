@@ -15,7 +15,6 @@ CREATE TABLE Property_details(
     property_space_available text NOT NULL, -- Private Room, Entire place, Shared Room
     dedicated_guest_space BOOLEAN, -- setup for guest or host has belongings there
     registered_business BOOLEAN,
-    cancellation_duration integer,
     min_length_stay integer,
     max_length_stay integer,
     guest_capacity integer NOT NULL,
@@ -26,8 +25,8 @@ CREATE TABLE Property_details(
 
 CREATE TABLE Rules(
     Rules_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    check_in_time DATETIME NOT NULL,
-    check_out_time DATETIME NOT NULL,
+    check_in_time integer NOT NULL,
+    check_out_time integer NOT NULL,
     self_check_out BOOLEAN,
     smoking BOOLEAN,
     events BOOLEAN,
