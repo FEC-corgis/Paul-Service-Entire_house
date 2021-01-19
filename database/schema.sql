@@ -50,13 +50,3 @@ CREATE TABLE Sanitation(
     property_details_id integer,
     FOREIGN KEY (property_details_id) REFERENCES Property_details(property_details_id) 
 );
-
--- Create TABLE Property_Rules(
---     FOREIGN KEY (id) REFERENCES Property_details(id) 
---     FOREIGN KEY (id) REFERENCES Rules(id) 
--- );
-
--- Create TABLE Property_Sanitation(
---     FOREIGN KEY (id) REFERENCES Property_details(id) 
---     FOREIGN KEY (id) REFERENCES Saniation(id) 
--- );
