@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('../database');
 const app = express();
 const port = 5545;
 
@@ -12,4 +13,4 @@ app.get('/propertyDetails/', (req, res)=>{
   console.log('do something');
 });
 
-app.listen(port, ()=>console.log('Server is listening on port '+port));
+app.listen(port, ()=>console.log('Server is listening on port ' + port));
