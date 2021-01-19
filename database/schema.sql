@@ -20,7 +20,8 @@ CREATE TABLE Property_details(
     guest_capacity integer NOT NULL,
     rooms integer NOT NULL,
     bathrooms integer NOT NULL,
-    property_description text
+    property_description text,
+    property_id integer
 );
 
 CREATE TABLE Rules(
