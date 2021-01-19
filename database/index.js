@@ -1,4 +1,5 @@
 const mysql = require('mysql');
+const seed = require('./dbSeed.js');
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -16,6 +17,8 @@ connection.connect((err)=>{
 //     }
 //     console.log(result.affectedRows);
 //   });
+  seed.seedPropertyDetails();
 });
+
 
 module.exports.connection = connection;
