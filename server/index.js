@@ -11,7 +11,7 @@ app.use(bp.json());
 
 app.get('/propertyDetails/', (req, res)=>{
   let val = Object.values(req.query);
-  if (val.length>0) {
+  if (val.length > 0) {
     db.connection.query(`SELECT * FROM Property_details WHERE Property_details_id=${val[0]}`, (err, result)=>{
       if (err) { throw err; }
       res.send(result);

@@ -4,13 +4,13 @@ const HostedList = (props) => (
   <div>
     <div id="test">
       <img src="./img/house.JPG"></img>
-      <h4>Entire home</h4>
+      <h4>{props.state.detes[0].property_space_available}</h4>
       <p>You'll have the cottage to yourself.</p>
     </div>
     <div>
       <img src="./img/star.jpg"></img>
       <h4>Enhanced Clean</h4>
-      <p>This host commited to Airbnb's 5-step enhanced cleaning process.</p> <a onClick={props.getPropInfo()}>Learn more.</a>
+      <p>This host commited to Airbnb's 5-step enhanced cleaning process.</p> <button>Learn more.</button>
     </div>
     <div>
       <img src="./img/host.JPG"></img>
