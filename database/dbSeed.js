@@ -35,14 +35,10 @@ const seedPropertyDetails = function() {
     });
     let infChild = booleanFillers();
     db.connection.query(`INSERT INTO Rules (check_in_time, check_out_time, self_check_out, smoking, events, pets, infants, children_suitable) VALUES (${Math.ceil(Math.random() * 12)}, 4, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()})`, (err, result)=>{
-      if (err) {
-        throw err;
-      }
+      if (err) { throw err; }
     });
     db.connection.query(`INSERT INTO Sanitation (sanitize_surfaces, approved_products, thoroughly_clean, mask_glove, wash_linen, local_guidance) VALUES (${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()})`, (err, result)=>{
-      if (err) { 
-        throw err;
-      }
+      if (err) { throw err; }
     });
     propertyCount--;
   }
