@@ -21,7 +21,29 @@ class HostedBy extends React.Component {
       property_type: "Apartment",
       registered_business: 0,
       rooms: 6
-    }]};
+    }],
+    rules:[{
+      Rules_id: 1,
+      check_in_time: 6,
+      check_out_time: 4,
+      smoking: 0,
+      events: 1,
+      pets: 1,
+      infants: 0,
+      children_suitable: 1,
+      Property_details_id: 1
+    }],
+    sanitation:[{
+      Sanitation_id: 1,
+      sanitize_surface: 1,
+      approved_products: 1,
+      thoroughly_clean: 0,
+      mask_glove: 0,
+      wash_linen: 1,
+      local_guidance: 1,
+      Property_details_id: 1 
+      }]
+  };
     this.getPropInfo = this.getPropInfo.bind(this);
   }
   componentDidMount() {
@@ -37,22 +59,39 @@ class HostedBy extends React.Component {
         this.setState({detes: res.data});
       })
       .catch((err)=> { console.log(err); });
+    axios({
+      method: 'GET',
+      url: `http://localhost:5545/propertyRules/?id=${Math.floor(Math.random()*100)}`
+    })
+      .then((res)=>{
+        this.setState({rules : res.data});
+      })
+      .catch((err)=> { console.log(err); });
+    axios({
+      method: 'GET',
+      url: `http://localhost:5545/propertySanitation/?id=${Math.floor(Math.random()*100)}`
+    })
+      .then((res)=>{
+        this.setState({sanitation: res.data});
+      })
+      .catch((err)=>{ console.log(err);});
   }
 
   conState() {
-    console.log(this.state.detes[0]);
+    console.log(this.state);
   }
 
   render() {
     return (
       <div>
-        <h1>{this.state.detes[0].property_space_available} {this.state.detes[0].property_narrow_type} hosted by Paul</h1>
+        <h1>{this.state.detes[0].property_space_available} {this.state.detes[0].property_narrow_type} hosted by Hilary</h1>
         <h3>{this.state.detes[0].guest_capacity} guests - {this.state.detes[0].rooms} beds - {this.state.detes[0].bathrooms} bath</h3>
         <img id='hostpic' src="https://a0.muscache.com/im/pictures/user/28ccfa9f-9fae-49dd-94da-2bd7525548c4.jpg?im_w=240"></img>
         <hr></hr>
         <HostedList state={this.state}/>
         <hr></hr>
-        <p>{this.state.detes[0].property_description}</p><a>read more</a>
+        <p>{this.state.detes[0].property_description}</p><button onClick={this.conState.bind(this)}>read more</button>
+        <a href='http://localhost:5545'>Contact host</a>
       </div>
     );
   }

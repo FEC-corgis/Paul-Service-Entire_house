@@ -19,4 +19,24 @@ app.get('/propertyDetails/', (req, res)=>{
   }
 });
 
+app.get('/propertyRules/', (req,res)=>{
+  let val = Object.values(req.query);
+  if(val.length > 0){
+    db.connection.query(`SELECT * FROM Rules WHERE Property_details_id=${val[0]}`, (err, result) =>{
+      if (err) { throw err; }
+      res.send(result);
+    })
+  }
+});
+
+app.get('/propertySanitation/', (req,res)=>{
+  let val = Object.values(req.query);
+  if(val.length > 0){
+    db.connection.query(`SELECT * FROM Sanitation WHERE Property_details_id=${val[0]}`, (err, result) =>{
+      if (err) { throw err; }
+      res.send(result);
+    })
+  }
+});
+
 app.listen(port, ()=>console.log('Server is listening on port ' + port));
