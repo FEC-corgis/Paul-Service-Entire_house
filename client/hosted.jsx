@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './hosted.css';
 import HostedList from './hostedList.jsx';
 import axios from 'axios';
+import './hosted.css';
 
 class HostedBy extends React.Component {
   constructor(props) {
@@ -83,14 +83,14 @@ class HostedBy extends React.Component {
 
   render() {
     return (
-      <div>
+      <div >
         <h1>{this.state.detes[0].property_space_available} {this.state.detes[0].property_narrow_type} hosted by Hilary</h1>
-        <h3>{this.state.detes[0].guest_capacity} guests - {this.state.detes[0].rooms} beds - {this.state.detes[0].bathrooms} bath</h3>
+        <p id="subtitle">{this.state.detes[0].guest_capacity} guests &middot; {this.state.detes[0].rooms} bedrooms &middot; {this.state.detes[0].bathrooms} bath</p>
         <img id='hostpic' src="https://a0.muscache.com/im/pictures/user/28ccfa9f-9fae-49dd-94da-2bd7525548c4.jpg?im_w=240"></img>
         <hr></hr>
         <HostedList state={this.state}/>
         <hr></hr>
-        <p>{this.state.detes[0].property_description}</p><button onClick={this.conState.bind(this)}>read more</button>
+        <p id="descriptionProp">{this.state.detes[0].property_description}</p><button onClick={this.conState.bind(this)}>read more</button>
         <a href='http://localhost:5545'>Contact host</a>
       </div>
     );
