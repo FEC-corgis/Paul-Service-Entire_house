@@ -93,8 +93,8 @@ class HostedBy extends React.Component {
           <hr></hr>
           <HostedList state={this.state}/>
           <hr></hr>
-          <p id="descriptionProp">{this.state.detes[0].property_description}</p><a href=''> read more</a>
-          <a href=''>Contact host</a>
+          <p className="descriptionProp">{this.state.detes[0].property_description}<a href=''> read more</a></p>          
+          <a className="descriptionProp" href=''>Contact host</a>
       </div>
     );
   }

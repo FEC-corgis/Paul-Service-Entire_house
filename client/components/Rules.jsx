@@ -20,7 +20,7 @@ const Rules = function(props){
         <img className="topicIcons" src="../img/rules.JPG"></img>
         <div className="wordish">
         <h3>House rules</h3>
-        <p>{message} host doesn't allow {ending}.</p> <a href=''>Get details</a>
+        <p>{message} host doesn't allow {ending}.<a href=''>Get details</a></p> 
         </div>
     </div>
     )

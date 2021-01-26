@@ -24,8 +24,8 @@ const HostedList= function(props){
       <img className="topicIcons" src="../img/star.jpg"></img>
       <div className="wordish">
       <h3>Enhanced Clean</h3>
-      <p>This host commited to Airbnb's 5-step enhanced cleaning process.</p> <a href=''>Learn more.</a>
-      </div>
+      <p>This host commited to Airbnb's 5-step enhanced cleaning process.<a href=''>Learn more.</a></p>
+     </div>
     </div>
     <div>
       {superHost}
@@ -37,7 +37,7 @@ const HostedList= function(props){
       <img className="topicIcons" src="../img/cancel.JPG"></img>
       <div className="wordish">
       <h3>Cancellation policy</h3>
-      <p>Add your trip dates to get the cancellation details for this stay.</p><a href=''>Get details</a>
+      <p>Add your trip dates to get the cancellation details for this stay.<a href=''>Get details</a></p>      
       </div>
     </div>
     <div>

@@ -39,7 +39,7 @@ h1{
   margin-top: 0px;
 }
 
-#descriptionProp{
+.descriptionProp{
   font-size: 1.3em;
 }
 
@@ -54,6 +54,7 @@ h1{
 .wordish{
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .textComponent{
