@@ -11,7 +11,9 @@ const HostedList= function(props){
   : entireHouse = <div></div>;
 
   Math.random()< 0.5 ? superHost = <SuperHost/>: superHost = <div></div>;
-  Math.random()< 0.5 ? selfCheck = <SelfCheck/>: selfCheck = <div></div>;
+  // need endpoint from Dane, randomized this for now
+
+  props.state.rules[0].self_check_out === 1 ? selfCheck = <SelfCheck/>: selfCheck = <div></div>;
 
   return(
   <div>

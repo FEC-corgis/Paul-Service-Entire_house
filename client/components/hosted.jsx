@@ -7,7 +7,8 @@ import './hosted.css';
 class HostedBy extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {detes: [{
+    this.state = {
+      detes: [{
       Property_details_id: 1,
       bathrooms: 2,
       dedicated_guest_space: 0,
@@ -26,6 +27,7 @@ class HostedBy extends React.Component {
       Rules_id: 1,
       check_in_time: 6,
       check_out_time: 4,
+      self_check_out: 1,
       smoking: 0,
       events: 1,
       pets: 1,
@@ -77,21 +79,22 @@ class HostedBy extends React.Component {
       .catch((err)=>{ console.log(err);});
   }
 
-  conState() {
-    console.log(this.state);
-  }
-
   render() {
     return (
       <div >
-        <h1>{this.state.detes[0].property_space_available} {this.state.detes[0].property_narrow_type} hosted by Hilary</h1>
-        <p id="subtitle">{this.state.detes[0].guest_capacity} guests &middot; {this.state.detes[0].rooms} bedrooms &middot; {this.state.detes[0].bathrooms} bath</p>
-        <img id='hostpic' src="https://a0.muscache.com/im/pictures/user/28ccfa9f-9fae-49dd-94da-2bd7525548c4.jpg?im_w=240"></img>
-        <hr></hr>
-        <HostedList state={this.state}/>
-        <hr></hr>
-        <p id="descriptionProp">{this.state.detes[0].property_description}</p><button onClick={this.conState.bind(this)}>read more</button>
-        <a href='http://localhost:5545'>Contact host</a>
+          <div className="headContainer">
+          <div className="header">
+            <h1>{this.state.detes[0].property_space_available} {this.state.detes[0].property_narrow_type} hosted by Dane</h1>
+            {/* made Dane host to remind myself to get host data from him */}
+            <p id="subtitle">{this.state.detes[0].guest_capacity} guests &middot; {this.state.detes[0].rooms} bedrooms &middot; {this.state.detes[0].guest_capacity} beds &middot; {this.state.detes[0].bathrooms} bath</p>
+          </div>
+          <img id='hostpic' src="../img/hostpic.jpg"></img>
+          </div>
+          <hr></hr>
+          <HostedList state={this.state}/>
+          <hr></hr>
+          <p id="descriptionProp">{this.state.detes[0].property_description}</p><a href=''> read more</a>
+          <a href=''>Contact host</a>
       </div>
     );
   }

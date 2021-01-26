@@ -24,11 +24,11 @@ const seedPropertyDetails = function() {
 
   while (propertyCount <= 100) {
     let typeArr = Object.keys(propType);
-    let type = typeArr[Math.floor(Math.random() * 6)];
+    let type = typeArr[Math.floor(Math.random() * typeArr.length)];
     let min = Math.ceil(Math.random() * 6);
     let narrow = propType[type][Math.floor(Math.random() * propType[type].length)];
     let description = `This ${adjectives[Math.floor(Math.random() * adjectives.length)]} ${type} is ${Math.ceil(Math.random() * 30)} minutes away from a ${attraction[Math.floor(Math.random() * attraction.length)]} and walkable distance from a ${attraction[Math.floor(Math.random() * attraction.length)]}. It's the perfect location for you and more! It accompanies ${min} with ease, and has plenty of room for lounging. You'll have a ${adjectives[Math.floor(Math.random() * adjectives.length)]} time here at our ${adjectives[Math.floor(Math.random() * adjectives.length)]} ${narrow}! Reserve your stay now!!`;
-    db.connection.query(`INSERT INTO Property_details (property_type, property_narrow_type, property_space_available, dedicated_guest_space, registered_business, min_length_stay, max_length_stay, guest_capacity, rooms, bathrooms, property_description) VALUES ("${type}", "${narrow}", "${spaceAvail[Math.floor(Math.random() * 3)]}",${booleanFillers()} , ${booleanFillers()}, ${min}, ${maxStay(min)}, ${Math.ceil(Math.random() * 11)}, ${Math.ceil(Math.random() * 9)}, ${Math.ceil(Math.random() * 4)}, "${description}" )`, (err, result)=>{
+    db.connection.query(`INSERT INTO Property_details (property_type, property_narrow_type, property_space_available, dedicated_guest_space, registered_business, min_length_stay, max_length_stay, guest_capacity, rooms, beds, bathrooms, property_description) VALUES ("${type}", "${narrow}", "${spaceAvail[Math.floor(Math.random() * 3)]}",${booleanFillers()} , ${booleanFillers()}, ${min}, ${maxStay(min)}, ${Math.ceil(Math.random() * 11)}, ${Math.ceil(Math.random() * 9)},${Math.ceil(Math.random() * 11)}, ${Math.ceil(Math.random() * 4)}, "${description}" )`, (err, result)=>{
       if (err) { throw err; }
     });
     let infChild = booleanFillers();
