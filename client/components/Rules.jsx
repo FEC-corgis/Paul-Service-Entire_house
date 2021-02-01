@@ -2,9 +2,9 @@ import React from 'react';
 
 const Rules = function(props){
     let children = "This place isn't suitable for children under 12 and the";
-    let rules = {'infants': props.state.state.rules[0].infants, 'pets': props.state.state.rules[0].pets, 'parties': props.state.state.rules[0].events, 'smoking':props.state.state.rules[0].smoking};
+    let rules = {'infants': props.detes.infants, 'pets': props.detes.pets, 'parties': props.detes.events, 'smoking':props.detes.smoking};
     let message = '', ending = '';
-    if(props.state.state.rules[0].children_suitable === 1){
+    if(props.detes.children_suitable === 1){
       message += children;
     }else{
       message = 'This';

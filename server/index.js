@@ -12,9 +12,9 @@ app.use(bp.json());
 app.get('/propertyDetails/', (req, res)=>{
   let val = Object.values(req.query);
   if (val.length > 0) {
-    db.connection.query(`SELECT * FROM Property_details WHERE id=${val[0]}`, (err, result)=>{
+    db.connection.query(`SELECT * FROM Property_details d, Rules r, Sanitation s WHERE d.id=${val[0]} && r.id=${val[0]} && s.id=${val[0]}`, (err, result)=>{
       if (err) { throw err; }
-     res.status(200).send(result)
+      res.status(200).send(result);
      });
   }
 });
