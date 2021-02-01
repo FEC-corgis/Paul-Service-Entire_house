@@ -20,7 +20,8 @@ CREATE TABLE Property_details(
     guest_capacity integer NOT NULL,
     rooms integer NOT NULL,
     bathrooms integer NOT NULL,
-    property_description text
+    property_description text,
+    property_id integer
 );
 
 CREATE TABLE Rules(
@@ -34,8 +35,8 @@ CREATE TABLE Rules(
     infants BOOLEAN,
     children_suitable BOOLEAN,
     additional_rules JSON, -- to add an array of additional rules
-    property_details_id integer,
-    FOREIGN KEY (property_details_id) REFERENCES Property_details(property_details_id) 
+    Property_details_id integer,
+    FOREIGN KEY (Property_details_id) REFERENCES Property_details(Property_details_id) 
 );
 
 CREATE TABLE Sanitation(
@@ -46,6 +47,6 @@ CREATE TABLE Sanitation(
     mask_glove BOOLEAN,
     wash_linen BOOLEAN,
     local_guidance BOOLEAN,
-    property_details_id integer,
-    FOREIGN KEY (property_details_id) REFERENCES Property_details(property_details_id) 
+    Property_details_id integer,
+    FOREIGN KEY (Property_details_id) REFERENCES Property_details(Property_details_id) 
 );
