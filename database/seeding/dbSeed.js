@@ -65,4 +65,5 @@ const seedPropertyDetails = function() {
   }
 };
 
+
 module.exports.seedPropertyDetails = seedPropertyDetails;

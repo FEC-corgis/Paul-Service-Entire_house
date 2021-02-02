@@ -3,12 +3,12 @@ import Avail from './Avail.jsx';
 import Rules from './Rules.jsx';
 import SelfCheck from './SelfCheck.jsx';
 import SuperHost from './SuperHost.jsx';
-// import Modal from './Modal.jsx';
+import Modal from './Modal.jsx';
 
 const HostedList = ({detes}) => {
   const outside = useRef();
   const [cleanIsOpen, setCleanIsOpen] = useState(false);
-  const [cancelIsOpen, setCancelIsOpen] = useState(false);
+  // const [cancelIsOpen, setCancelIsOpen] = useState(false);
 
   const handleClick = (e) => {
     if(outside.current.contains(e.target)){
@@ -46,21 +46,21 @@ const HostedList = ({detes}) => {
       <p>This host commited to Airbnb's 5-step enhanced cleaning process.<button onClick={()=>setCleanIsOpen(!cleanIsOpen)} className="modalbtn">Learn more.</button></p>
      </div>
     </div>
-      {cleanIsOpen ? (<Modal />): null}
+      {cleanIsOpen ? (<Modal/>): null}
     <div>
       {superHost}
     </div>
     <div>
       {selfCheck}
     </div>
-    <div className="textComponent" ref={outside}>
+    <div className="textComponent">
       <img className="topicIcons" src="../img/cancel.JPG"></img>
       <div className="wordish">
       <h3>Cancellation policy</h3>
       <p>Add your trip dates to get the cancellation details for this stay.<button onClick={()=>setCancelIsOpen(!cancelIsOpen)} className="modalbtn"> Get details</button></p>      
       </div>
     </div>
-    {cancelIsOpen ? (<Modal />): null}
+    {/* {cancelIsOpen ? (<Modal />): null} */}
     <div>
       <Rules detes={detes}/>
     </div>
