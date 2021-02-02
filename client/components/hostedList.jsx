@@ -5,7 +5,7 @@ import SelfCheck from './SelfCheck.jsx';
 import SuperHost from './SuperHost.jsx';
 // import Modal from './Modal.jsx';
 
-const HostedList= function(props){
+const HostedList = ({detes}) => {
   const outside = useRef();
   const [cleanIsOpen, setCleanIsOpen] = useState(false);
   const [cancelIsOpen, setCancelIsOpen] = useState(false);
@@ -25,14 +25,14 @@ const HostedList= function(props){
 
   // optional information based on db data
   let entireHouse, superHost, selfCheck;
-  props.detes.property_space_available === 'Entire'
-  ? entireHouse = <Avail detes={props}/>
+  detes.property_space_available === 'Entire'
+  ? entireHouse = <Avail detes={detes}/>
   : entireHouse = null;
 
   Math.random()< 0.5 ? superHost = <SuperHost/>: superHost = null;
   // need endpoint from Dane, randomized this for now
 
-  props.detes.self_check_out === 1 ? selfCheck = <SelfCheck/>: selfCheck = null;
+  detes.self_check_out === 1 ? selfCheck = <SelfCheck/>: selfCheck = null;
 
   return(
   <div>
@@ -62,7 +62,7 @@ const HostedList= function(props){
     </div>
     {cancelIsOpen ? (<Modal />): null}
     <div>
-      <Rules detes={props}/>
+      <Rules detes={detes}/>
     </div>
   </div>
   )

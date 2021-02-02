@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Rules = function(props){
+const Rules = ({detes}) => {
     let children = "This place isn't suitable for children under 12 and the";
-    let rules = {'infants': props.detes.infants, 'pets': props.detes.pets, 'parties': props.detes.events, 'smoking':props.detes.smoking};
+    let rules = {'infants': detes.infants, 'pets': detes.pets, 'parties': detes.events, 'smoking':detes.smoking};
     let message = '', ending = '';
-    if(props.detes.children_suitable === 1){
+    if(detes.children_suitable === 1){
       message += children;
     }else{
       message = 'This';
