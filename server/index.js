@@ -31,7 +31,7 @@ app.get('/propertyType/', async(req, res)=>{
 });
 
 //For Slava guest capacity
-app.get('/propertyType/', async(req, res)=>{
+app.get('/propertyGuestCap/', async(req, res)=>{
   let val = Object.values(req.query);
   if(val.length>0){
     const [results, metadata] = await sequelize.query(`SELECT guest_capacity FROM Property_details WHERE id=${val[0]}`);
