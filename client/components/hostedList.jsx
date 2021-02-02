@@ -8,14 +8,14 @@ import Modal from './Modal.jsx';
 const HostedList = ({detes}) => {
   const outside = useRef();
   const [cleanIsOpen, setCleanIsOpen] = useState(false);
-  // const [cancelIsOpen, setCancelIsOpen] = useState(false);
+  const [cancelIsOpen, setCancelIsOpen] = useState(false);
 
   const handleClick = (e) => {
     if(outside.current.contains(e.target)){
       return
     }
     setCleanIsOpen(false);
-    // setCancelIsOpen(false);
+    setCancelIsOpen(false);
   }
 
   useEffect(()=> {
@@ -39,7 +39,8 @@ const HostedList = ({detes}) => {
     <div>
       {entireHouse}
     </div>
-    <div className="textComponent" ref={outside}>
+    {/* ref outside is causing cancel to not open */}
+    <div className="textComponent" ref={outside}> 
       <img className="topicIcons" src="../img/star.jpg"></img>
       <div className="wordish">
       <h3>Enhanced Clean</h3>
@@ -60,7 +61,7 @@ const HostedList = ({detes}) => {
       <p>Add your trip dates to get the cancellation details for this stay.<button onClick={()=>setCancelIsOpen(!cancelIsOpen)} className="modalbtn"> Get details</button></p>      
       </div>
     </div>
-    {/* {cancelIsOpen ? (<Modal />): null} */}
+    {cancelIsOpen ? (<Modal />): null}
     <div>
       <Rules detes={detes}/>
     </div>

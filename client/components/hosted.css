@@ -45,7 +45,7 @@ h1{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: gray;
+  background-color: rgba(169,169,168,0.3);
   z-index: 999;
   cursor: pointer;
 }

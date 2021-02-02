@@ -5,11 +5,11 @@ const Modal = ({detes}) => {
   return (
     <div className="modal-overlay">
         <div className="modal-content">
-      <img src="../img/EnhancedCleanIcon.JPG"></img>
-      <h3>Enhanced Clean</h3>
-      <p>Dane committed to Airbnb's 5-step enhanced cleaning process-- a set of standards developed in partnership with experts, for the times of COVID-19 and beyond.</p>
-      <p>Here's what Dane committed to doing before every stay:</p>
-      <div className="eColumns">
+          <img src="../img/EnhancedCleanIcon.JPG"></img>
+          <h3>Enhanced Clean</h3>
+          <p>Dane committed to Airbnb's 5-step enhanced cleaning process-- a set of standards developed in partnership with experts, for the times of COVID-19 and beyond.</p>
+          <p>Here's what Dane committed to doing before every stay:</p>
+        <div className="eColumns">
           <div>
               <h4>Sanitize surfaces</h4>
               <p>Sanitize every high-touch surface, down to the doorknow</p>
@@ -34,7 +34,8 @@ const Modal = ({detes}) => {
               <h4>Follow all other local guidance</h4>
               <p>Comply with local laws, including any additional safety or cleaning guidelines</p>
           </div>
-      </div>
+        </div>
+        <a href=''>Learn more about the 5-step process</a>
       </div>
     </div>
   )
