@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react';
-import Modal from './Modal.jsx';
+import RulesMo from './modals/RulesMo.jsx';
 
 const Rules = ({detes, modal}) => {
   const outside = useRef();
@@ -8,7 +8,6 @@ const Rules = ({detes, modal}) => {
     if(outside.current.contains(e.target)){
       return
     }
-    setRulesIsOpen(false);
   }
 
   useEffect(()=> {
@@ -37,8 +36,8 @@ const Rules = ({detes, modal}) => {
         <div className="wordish">
           <h3>House rules</h3>
           <p>{message} host doesn't allow {ending}.<button onClick={()=>setRulesIsOpen(!rulesIsOpen)} className="modalbtn">Get details</button></p> 
-        </div>
-        {rulesIsOpen? <Modal /> : null}
+        </div> 
+        {rulesIsOpen? <RulesMo detes={detes}/> : null}
     </div>
     )
 }; 
