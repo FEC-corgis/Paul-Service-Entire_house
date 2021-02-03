@@ -3,7 +3,7 @@ CREATE DATABASE property;
 USE property;
 
 CREATE TABLE Property_details(
-    Property_details_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     property_type text NOT NULL,  -- Apartment, House, Secondary Unit, Unique Space, Bed and breakfast, Boutique hotel
     property_narrow_type text NOT NULL,
     -- Apartment(Apartment, Condominium, Serviced apartment, Loft), 
@@ -19,13 +19,14 @@ CREATE TABLE Property_details(
     max_length_stay integer,
     guest_capacity integer NOT NULL,
     rooms integer NOT NULL,
+    beds integer NOT NULL,
     bathrooms integer NOT NULL,
     property_description text,
     property_id integer
 );
 
 CREATE TABLE Rules(
-    Rules_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     check_in_time integer NOT NULL,
     check_out_time integer NOT NULL,
     self_check_out BOOLEAN,
@@ -34,19 +35,15 @@ CREATE TABLE Rules(
     pets BOOLEAN,
     infants BOOLEAN,
     children_suitable BOOLEAN,
-    additional_rules JSON, -- to add an array of additional rules
-    Property_details_id integer,
-    FOREIGN KEY (Property_details_id) REFERENCES Property_details(Property_details_id) 
+    additional_rules JSON -- to add an array of additional rules
 );
 
 CREATE TABLE Sanitation(
-    Sanitation_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     sanitize_surfaces BOOLEAN,
     approved_products BOOLEAN,
     thoroughly_clean BOOLEAN,
     mask_glove BOOLEAN,
     wash_linen BOOLEAN,
-    local_guidance BOOLEAN,
-    Property_details_id integer,
-    FOREIGN KEY (Property_details_id) REFERENCES Property_details(Property_details_id) 
+    local_guidance BOOLEAN
 );

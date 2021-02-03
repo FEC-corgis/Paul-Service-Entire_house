@@ -1,12 +1,8 @@
-const db = require('./index.js');
+const { Property_details, Rules, Sanitations } = require('../../models');
 
-const booleanFillers = () => {
-  return Math.random() < 0.5;
-};
+const booleanFillers = () => {return Math.random() < 0.5;};
 
-const maxStay = (min) => {
-  return Math.floor(Math.random() * (15 - min) + min);
-};
+const maxStay = (min) => {return Math.floor(Math.random() * (15 - min) + min);};
 
 const seedPropertyDetails = function() {
   let propertyCount = 1;
@@ -28,19 +24,45 @@ const seedPropertyDetails = function() {
     let min = Math.ceil(Math.random() * 6);
     let narrow = propType[type][Math.floor(Math.random() * propType[type].length)];
     let description = `This ${adjectives[Math.floor(Math.random() * adjectives.length)]} ${type} is ${Math.ceil(Math.random() * 30)} minutes away from a ${attraction[Math.floor(Math.random() * attraction.length)]} and walkable distance from a ${attraction[Math.floor(Math.random() * attraction.length)]}. It's the perfect location for you and more! It accompanies ${min} with ease, and has plenty of room for lounging. You'll have a ${adjectives[Math.floor(Math.random() * adjectives.length)]} time here at our ${adjectives[Math.floor(Math.random() * adjectives.length)]} ${narrow}! Reserve your stay now!!`;
-    db.connection.query(`INSERT INTO Property_details (property_type, property_narrow_type, property_space_available, dedicated_guest_space, registered_business, min_length_stay, max_length_stay, guest_capacity, rooms, beds, bathrooms, property_description) VALUES ("${type}", "${narrow}", "${spaceAvail[Math.floor(Math.random() * 3)]}",${booleanFillers()} , ${booleanFillers()}, ${min}, ${maxStay(min)}, ${Math.ceil(Math.random() * 11)}, ${Math.ceil(Math.random() * 9)},${Math.ceil(Math.random() * 11)}, ${Math.ceil(Math.random() * 4)}, "${description}" )`, (err, result)=>{
-      if (err) { throw err; }
+
+    Property_details.create({
+     property_type: type,
+     property_narrow_type: narrow,
+     property_space_available: spaceAvail[Math.floor(Math.random() * 3)],
+     dedicated_guest_space: booleanFillers(),
+     registered_business: booleanFillers(),
+     min_length_stay: min,
+     max_length_stay: maxStay(min),
+     guest_capacity: Math.ceil(Math.random() * 11),
+     rooms: Math.ceil(Math.random() * 9),
+     beds: Math.ceil(Math.random() * 11),
+     bathrooms: Math.ceil(Math.random() * 4),
+     property_description: description,
+     property_id: null
     });
-    let infChild = booleanFillers();
-    db.connection.query(`INSERT INTO Rules (check_in_time, check_out_time, self_check_out, smoking, events, pets, infants, children_suitable, Property_details_id) VALUES (${Math.ceil(Math.random() * 12)}, 4, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${propertyCount})`, (err, result)=>{
-      if (err) { throw err; }
+
+    Rules.create({
+     check_in_time: Math.ceil(Math.random() * 12),
+     check_out_time: 4,
+     self_check_out: booleanFillers(),
+     smoking: booleanFillers(),
+     events: booleanFillers(), 
+     pets: booleanFillers(),
+     infants: booleanFillers(),
+     children_suitable: booleanFillers() 
     });
-    db.connection.query(`INSERT INTO Sanitation (sanitize_surfaces, approved_products, thoroughly_clean, mask_glove, wash_linen, local_guidance, Property_details_id) VALUES (${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${booleanFillers()}, ${propertyCount})`, (err, result)=>{
-      if (err) { throw err; }
+
+    Sanitations.create({
+      sanitize_surfaces: booleanFillers(),
+      approved_products: booleanFillers(),
+      thoroughly_clean: booleanFillers(),
+      mask_glove: booleanFillers(),
+      wash_linen: booleanFillers(),
+      local_guidance: booleanFillers()
     });
+
     propertyCount++;
   }
 };
-
 
 module.exports.seedPropertyDetails = seedPropertyDetails;
