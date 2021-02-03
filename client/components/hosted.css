@@ -21,11 +21,42 @@ h1{
   margin: 0px;
   padding: 0px;
   font-size: 1.3em;
+  text-decoration: underline;
 }
 
 .headContainer{
   display: flex;
   flex-direction: row;
+}
+
+.modalbtn{
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 1em;
+}
+.modal-overlay{
+  position: fixed;
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(169,169,168,0.3);
+  z-index: 999;
+  cursor: pointer;
+}
+
+.modal-content{
+  margin: 15% auto;
+  background-color: white;
+  border-radius: 0.25rem;
+  width: 50vw;
+  padding: 2rem;
+  position: relative;
 }
 
 .header{
