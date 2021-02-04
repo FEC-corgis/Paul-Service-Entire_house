@@ -1,10 +1,12 @@
 import React, { useState, useEffect} from 'react';
 import ReactDOM, { render } from 'react-dom';
+import {Route, BrowserRouter as Router} from 'react-router-dom'
 import HostedList from './hostedList.jsx';
 import {getDetes} from '../helper/api.js';
 import './hosted.css';
 
-const HostedBy = () => {
+const HostedBy = (props) => {
+  console.log(props);
   let entireHost;
   const [propertyDetes, setPropertyDetes] = useState([]);
 
@@ -37,4 +39,7 @@ const HostedBy = () => {
   return entireHost;
 };
 
-ReactDOM.render(<HostedBy/>, document.getElementById('entirehouse'));
+ReactDOM.render(
+<Router>
+  <HostedBy exact path="/rooms/:id" component={HostedBy}/>
+</Router>, document.getElementById('entirehouse'));
