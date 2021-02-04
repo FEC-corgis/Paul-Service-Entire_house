@@ -37,4 +37,4 @@ const HostedBy = () => {
   return entireHost;
 };
 
-ReactDOM.render(<HostedBy/>, document.getElementById('app'));
+ReactDOM.render(<HostedBy/>, document.getElementById('entirehouse'));

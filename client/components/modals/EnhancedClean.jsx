@@ -4,7 +4,7 @@ const EnhancedClean = () =>{
     return(
       <div className="modal-overlay">
         <div className="modal-content">
-          <img src="../img/EnhancedCleanIcon.JPG"></img>
+          <img src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanIcon.svg"></img>
           <h3>Enhanced Clean</h3>
           <p>Dane committed to Airbnb's 5-step enhanced cleaning process-- a set of standards developed in partnership with experts, for the times of COVID-19 and beyond.</p>
        <p>Here's what Dane committed to doing before every stay:</p>

@@ -43,7 +43,7 @@ const HostedList = ({detes}) => {
     </div>
     {/* ref outside is causing cancel to not open */}
     <div className="textComponent" ref={outside}> 
-      <img className="topicIcons" src="../img/star.jpg"></img>
+      <img className="topicIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/star.svg"></img>
       <div className="wordish">
       <h3>Enhanced Clean</h3>
       <p>This host commited to Airbnb's 5-step enhanced cleaning process.<button onClick={()=>setCleanIsOpen(!cleanIsOpen)} className="modalbtn">Learn more.</button></p>
@@ -57,7 +57,7 @@ const HostedList = ({detes}) => {
       {selfCheck}
     </div>
     <div className="textComponent">
-      <img className="topicIcons" src="../img/cancel.JPG"></img>
+      <img className="topicIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/cancel.svg"></img>
       <div className="wordish">
       <h3>Cancellation policy</h3>
       <p>Add your trip dates to get the cancellation details for this stay.</p>     
