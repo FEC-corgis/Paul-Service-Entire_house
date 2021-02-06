@@ -4,7 +4,7 @@ const booleanFillers = () => {return Math.random() < 0.5;};
 
 const maxStay = (min) => {return Math.floor(Math.random() * (15 - min) + min);};
 
-const seedPropertyDetails = function() {
+const seedPropertyDetails =()=> {
   let propertyCount = 1;
   let propType = {
     'Apartment': ['Condominium', 'Serviced apartment', 'Loft'],
@@ -64,6 +64,5 @@ const seedPropertyDetails = function() {
     propertyCount++;
   }
 };
-
 
 module.exports.seedPropertyDetails = seedPropertyDetails;

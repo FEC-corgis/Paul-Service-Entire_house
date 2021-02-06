@@ -32,7 +32,7 @@ const Rules = ({detes, modal}) => {
   }
   return(
     <div className="textComponent" ref={outside}>
-      <img className="topicIcons" src="../img/rules.JPG"></img>
+      <img className="topicIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/rules.svg"></img>
         <div className="wordish">
           <h3>House rules</h3>
           <p>{message} host doesn't allow {ending}.<button onClick={()=>setRulesIsOpen(!rulesIsOpen)} className="modalbtn">Get details</button></p> 

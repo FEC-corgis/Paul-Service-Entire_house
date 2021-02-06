@@ -38,7 +38,7 @@ CREATE TABLE Rules(
     additional_rules JSON -- to add an array of additional rules
 );
 
-CREATE TABLE Sanitation(
+CREATE TABLE Sanitations(
     id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     sanitize_surfaces BOOLEAN,
     approved_products BOOLEAN,

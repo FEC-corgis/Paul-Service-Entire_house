@@ -49,6 +49,9 @@ h1{
   z-index: 999;
   cursor: pointer;
 }
+.modal-content img{
+  height: 40px;
+}
 
 .modal-content{
   margin: 15% auto;
@@ -96,4 +99,5 @@ h1{
 .topicIcons{
   margin: 20px;
   align-self: center;
+  height: 30px;
 }
