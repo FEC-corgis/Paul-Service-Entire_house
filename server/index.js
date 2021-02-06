@@ -13,7 +13,7 @@ app.use(bp.json());
 app.get('/propertyDetails/:pId', async(req, res)=>{
   let {pId} = req.params;
   const [results, metadata] = await sequelize.query(`SELECT * FROM Property_details d, Rules r, Sanitations s WHERE d.id=${pId} && r.id=${pId} && s.id=${pId}`);
-  results.length>0?res.status(200).send(results):res.status(404).send('No results');
+   results.length>0?res.status(200).send(results):res.status(404).send('No results');
 });
 
 //For Jenny room type and building
