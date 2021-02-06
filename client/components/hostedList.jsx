@@ -14,7 +14,7 @@ const HostedList = ({detes}) => {
 
   const handleClick = (e) => {
     if(outside.current.contains(e.target)){
-      return
+      return;
     }
     setCleanIsOpen(false);
     // setCancelIsOpen(false);

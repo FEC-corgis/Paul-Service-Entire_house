@@ -8,6 +8,7 @@ const Rules = ({detes, modal}) => {
     if(outside.current.contains(e.target)){
       return
     }
+    setRulesIsOpen(false);
   }
 
   useEffect(()=> {
