@@ -10,6 +10,14 @@ h1{
  font-weight: 700;
 }
 
+#hostpic{
+  margin-left: auto;
+  margin-top: 20px;
+  border-radius: 50%;
+  width: 75px;
+  height:75px;
+}
+
 .wordish p{
   margin: 0px;
   padding: 0px;
@@ -56,7 +64,7 @@ h1{
 .modal-content{
   margin: 15% auto;
   background-color: white;
-  border-radius: 0.25rem;
+  border-radius: 1em;
   width: 50vw;
   padding: 2rem;
   position: relative;
@@ -77,14 +85,6 @@ h1{
   font-size: 1.3em;
 }
 
-#hostpic{
-  margin-left: auto;
-  margin-top: 20px;
-  border-radius: 50%;
-  width: 75px;
-  height:75px;
-}
-
 .wordish{
   display: flex;
   flex-direction: column;
@@ -101,3 +101,13 @@ h1{
   align-self: center;
   height: 30px;
 }
+
+/* Enhanced Clean modal */
+.eGrid{
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: auto auto auto;
+  grid-gap: 50px;
+}
+
+.eIcons{width: 20px;}

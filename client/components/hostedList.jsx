@@ -31,7 +31,6 @@ const HostedList = ({detes}) => {
     <div>
       {entireHouse}
     </div>
-    {/* ref outside is causing cancel to not open */}
     <div className="textComponent" > 
       <img className="topicIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/star.svg"></img>
       <div className="wordish">
