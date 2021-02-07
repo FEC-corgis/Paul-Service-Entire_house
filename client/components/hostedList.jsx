@@ -7,23 +7,13 @@ import EnhancedClean from './modals/EnhancedClean.jsx';
 import Cancellation from './modals/Cancellation.jsx'
 
 const HostedList = ({detes}) => {
-  const outside = useRef();
   const [cleanIsOpen, setCleanIsOpen] = useState(false);
   // const [cancelIsOpen, setCancelIsOpen] = useState(false);
   // cancellation modal in progress
-
-  const handleClick = (e) => {
-    if(outside.current.contains(e.target)){
-      return;
-    }
+ 
+  const closeModal = () =>{
     setCleanIsOpen(false);
-    // setCancelIsOpen(false);
   }
-
-  useEffect(()=> {
-    const getClick = document.addEventListener('click', handleClick)
-    return () => getClick();
-  }, []);
 
   // optional information based on db data
   let entireHouse, superHost, selfCheck;
@@ -42,14 +32,14 @@ const HostedList = ({detes}) => {
       {entireHouse}
     </div>
     {/* ref outside is causing cancel to not open */}
-    <div className="textComponent" ref={outside}> 
+    <div className="textComponent" > 
       <img className="topicIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/star.svg"></img>
       <div className="wordish">
       <h3>Enhanced Clean</h3>
       <p>This host commited to Airbnb's 5-step enhanced cleaning process.<button onClick={()=>setCleanIsOpen(!cleanIsOpen)} className="modalbtn">Learn more.</button></p>
      </div>
     </div>
-      {cleanIsOpen ? (<EnhancedClean />): null}
+      {cleanIsOpen ? (<EnhancedClean closeModal={closeModal}/>): null}
     <div>
       {superHost}
     </div>

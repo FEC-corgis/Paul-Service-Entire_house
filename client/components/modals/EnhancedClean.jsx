@@ -1,9 +1,21 @@
-import React from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 
-const EnhancedClean = () =>{
+const EnhancedClean = ({cleanIsOpen, closeModal}) =>{
+  const inside = useRef();
+  const handleClick = (e) => {
+    if(inside.current.contains(e.target)){
+      return;
+    }
+    closeModal();
+  }
+  useEffect(()=> {
+    const getClick = document.addEventListener('click', handleClick)
+    return () => getClick();
+  }, []);
+
     return(
       <div className="modal-overlay">
-        <div className="modal-content">
+        <div className="modal-content" ref={inside}>
           <img src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanIcon.svg"></img>
           <h3>Enhanced Clean</h3>
           <p>Dane committed to Airbnb's 5-step enhanced cleaning process-- a set of standards developed in partnership with experts, for the times of COVID-19 and beyond.</p>
