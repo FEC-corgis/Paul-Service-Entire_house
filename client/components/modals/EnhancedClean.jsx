@@ -31,7 +31,6 @@ const EnhancedClean = ({cleanIsOpen, closeModal}) =>{
             <h4>Use approved products</h4>
             <p>Use cleaners approved by health experts, like disinfectants with 70% alcohol or higher</p>
           </div>
-
           <div className="i3">
             <img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanCheck.svg"></img>
             <h4>Thoroughly clean</h4>
@@ -42,7 +41,6 @@ const EnhancedClean = ({cleanIsOpen, closeModal}) =>{
             <h4>Wear a mask and gloves</h4>
             <p>Help avoid cross-contamination by wearing a mask and gloves</p>
           </div>
-
           <div className="i5">
             <img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanCheck.svg"></img>
             <h4>Wash all linens</h4>
@@ -53,7 +51,6 @@ const EnhancedClean = ({cleanIsOpen, closeModal}) =>{
             <h4>Follow all other local guidance</h4>
             <p>Comply with local laws, including any additional safety or cleaning guidelines</p>
           </div>
-
         </div>
         <a href=''>Learn more about the 5-step process</a>
       </div>

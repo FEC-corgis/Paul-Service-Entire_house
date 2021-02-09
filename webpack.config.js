@@ -6,7 +6,7 @@ module.exports = {
     entry: './client/components/hosted.jsx',
     output: {
         path: path.join(__dirname, './client/public'),
-        filename: 'index.js'
+        filename: 'index_bundle.js'
     },
     module: {
         rules: [
