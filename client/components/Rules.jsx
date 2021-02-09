@@ -2,19 +2,11 @@ import React, {useEffect, useState, useRef} from 'react';
 import RulesMo from './modals/RulesMo.jsx';
 
 const Rules = ({detes, modal}) => {
-  const outside = useRef();
   const [rulesIsOpen, setRulesIsOpen] = useState(false);
-  const handleClick = (e) => {
-    if(outside.current.contains(e.target)){
-      return
-    }
+  
+  const closeModal = () => {
+    setRulesIsOpen(false);
   }
-
-  useEffect(()=> {
-    const getClick = document.addEventListener('click', handleClick)
-    return () => getClick();
-  }, [])
-
 
   let children = "This place isn't suitable for children under 12 and the";
   let rules = {'infants': detes.infants, 'pets': detes.pets, 'parties': detes.events, 'smoking':detes.smoking};
@@ -31,13 +23,13 @@ const Rules = ({detes, modal}) => {
     }
   }
   return(
-    <div className="textComponent" ref={outside}>
+    <div className="textComponent">
       <img className="topicIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/rules.svg"></img>
         <div className="wordish">
           <h3>House rules</h3>
           <p>{message} host doesn't allow {ending}.<button onClick={()=>setRulesIsOpen(!rulesIsOpen)} className="modalbtn">Get details</button></p> 
         </div> 
-        {rulesIsOpen? <RulesMo detes={detes}/> : null}
+        {rulesIsOpen? <RulesMo closeModal={closeModal} detes={detes}/> : null}
     </div>
     )
 }; 
