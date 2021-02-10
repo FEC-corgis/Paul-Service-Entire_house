@@ -5,6 +5,7 @@
 *{
     font-family: 'Nunito Sans', sans-serif;
 }
+
 h1{
  margin-bottom:5px;
  font-weight: 700;
@@ -57,6 +58,7 @@ h1{
   z-index: 999;
   cursor: pointer;
 }
+
 .modal-content img{
   height: 40px;
 }
@@ -70,37 +72,8 @@ h1{
   position: relative;
 }
 
-.header{
-  display: flex;
-  flex-direction: column;
-}
 
-#subtitle{
-  font-size: 1.3em;
-  flex-wrap: wrap;
-  margin-top: 0px;
-}
 
-.descriptionProp{
-  font-size: 1.3em;
-}
-
-.wordish{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.textComponent{
-  display: flex;
-  flex-direction: row;
-}
-
-.topicIcons{
-  margin: 20px;
-  align-self: center;
-  height: 30px;
-}
 
 /* Enhanced Clean modal */
 .eGrid{

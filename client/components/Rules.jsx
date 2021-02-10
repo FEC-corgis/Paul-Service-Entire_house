@@ -8,26 +8,34 @@ const Rules = ({detes, modal}) => {
     setRulesIsOpen(false);
   }
 
-  let children = "This place isn't suitable for children under 12 and the";
-  let rules = {'infants': detes.infants, 'pets': detes.pets, 'parties': detes.events, 'smoking':detes.smoking};
-  let message = '', ending = '';
-  if(detes.children_suitable === 1){
-    message += children;
-  }else{
-    message = 'This';
-  }
-  for(let rule in rules){
-    if(rules[rule]===1){
-      ending+=rule+',';
-      // need to fix this to include 'or' at the end and comma after last rule addition
+  const rulesMessage = () =>{
+    let children = "This place isn't suitable for children under 12 and the";
+    let rules = {'infants': detes.infants, 'pets': detes.pets, 'parties': detes.events, 'smoking':detes.smoking};
+    let rulesNu = Object.values(rules);
+    let rulesCnt = rulesNu.filter(r=>r!=0);
+    let message = '', ending = '';
+    detes.children_suitable === 1 ? message += children : message = 'This';
+    let count = 0;
+    for(let rule in rules){
+      if(count === rulesCnt.length-1){
+        ending+=rule+' or ';
+      }else if(count===rulesCnt.length){
+        ending+=rule+'. ';
+      }else{
+        ending+=rule+', ';
+      }
+      count++;
+      console.log(count);
     }
+    return `${message} host doesn't allow ${ending}`;
   }
+
   return(
     <div className="textComponent">
       <img className="topicIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/rules.svg"></img>
         <div className="wordish">
           <h3>House rules</h3>
-          <p>{message} host doesn't allow {ending}.<button onClick={()=>setRulesIsOpen(!rulesIsOpen)} className="modalbtn">Get details</button></p> 
+          <p>{rulesMessage()}<button onClick={()=>setRulesIsOpen(!rulesIsOpen)} className="modalbtn">Get details</button></p> 
         </div> 
         {rulesIsOpen? <RulesMo closeModal={closeModal} detes={detes}/> : null}
     </div>
