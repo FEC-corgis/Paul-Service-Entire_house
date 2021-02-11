@@ -12,20 +12,21 @@ const Rules = ({detes, modal}) => {
     let children = "This place isn't suitable for children under 12 and the";
     let rules = {'infants': detes.infants, 'pets': detes.pets, 'parties': detes.events, 'smoking':detes.smoking};
     let rulesNu = Object.values(rules);
-    let rulesCnt = rulesNu.filter(r=>r!=0);
+    let rulesCnt = rulesNu.filter(r=>r==1);
     let message = '', ending = '';
     detes.children_suitable === 1 ? message += children : message = 'This';
-    let count = 0;
+    let count = rulesCnt.length;
     for(let rule in rules){
-      if(count === rulesCnt.length-1){
+      if(count === 2 && rules[rule]===1){
         ending+=rule+' or ';
-      }else if(count===rulesCnt.length){
+        count--;
+      }else if(count === 1 && rules[rule]===1){
         ending+=rule+'. ';
-      }else{
+        count--;
+      }else if(rules[rule]===1){
         ending+=rule+', ';
+        count--;
       }
-      count++;
-      console.log(count);
     }
     return `${message} host doesn't allow ${ending}`;
   }

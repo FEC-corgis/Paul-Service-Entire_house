@@ -23,6 +23,7 @@ const Rules = ({detes, closeModal}) =>{
   return(
     <div className="modal-overlay">
       <div className="modal-content" ref={inside}>
+        <button className="closebtn_modal" onClick={closeModal}>X</button>
         <h3>House rules</h3>
          <div className="rColumns">
            <div>
