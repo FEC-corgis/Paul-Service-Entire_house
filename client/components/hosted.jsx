@@ -21,7 +21,7 @@ const HostedBy = (props) => {
       <div >
         <div className="headContainer">
           <div className="header">
-            <h1>{propertyDetes[0].property_space_available} {propertyDetes[0].property_narrow_type} hosted by Dane</h1>
+            <h1 className="titleForService">{propertyDetes[0].property_space_available} {propertyDetes[0].property_narrow_type} hosted by Dane</h1>
             {/* made Dane host to remind myself to get host data from him */}
             <p id="subtitle">{propertyDetes[0].guest_capacity} guests &middot; {propertyDetes[0].rooms} bedrooms &middot; {propertyDetes[0].guest_capacity} beds &middot; {propertyDetes[0].bathrooms} bath</p>
           </div>
@@ -30,7 +30,7 @@ const HostedBy = (props) => {
         <hr></hr>
         <HostedList detes={propertyDetes[0]}/>
         <hr></hr>
-        <p className="descriptionProp">{propertyDetes[0].property_description}<a href=''> read more</a></p>          
+        <p className="descriptionProp">{propertyDetes[0].property_description} <a href=''>read more</a></p>          
         <a className="descriptionProp" href=''>Contact host</a>
       </div>) : entireHost = null;
   
