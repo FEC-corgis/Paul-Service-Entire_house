@@ -35,7 +35,7 @@ const HostedList = ({detes}) => {
       <img className="topicIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/star.svg"></img>
       <div className="wordish">
       <h3>Enhanced Clean</h3>
-      <p>This host commited to Airbnb's 5-step enhanced cleaning process.<button onClick={()=>setCleanIsOpen(!cleanIsOpen)} className="modalbtn">Learn more.</button></p>
+      <p>This host commited to Airbnb's 5-step enhanced cleaning process. <button onClick={()=>setCleanIsOpen(!cleanIsOpen)} className="modalbtn">Learn more.</button></p>
      </div>
     </div>
       {cleanIsOpen ? (<EnhancedClean closeModal={closeModal}/>): null}
