@@ -14,8 +14,8 @@ const HostedBy = (props) => {
     .then(data => setPropertyDetes(data));
  
   const updateHostDetes = () => getHost(props.match.params.id)
-    .then(host => console.log('hi'));
-
+    .then(host => setHostDetes(host.Host));
+  
   useEffect(()=>{
     updatePropertyDetes();
     updateHostDetes();
@@ -26,13 +26,13 @@ const HostedBy = (props) => {
       <div className="entireContainer">
         <div className="headContainer">
           <div className="header">
-            <h1 className="titleForService">{propertyDetes[0].property_space_available} {propertyDetes[0].property_narrow_type} hosted by Dane</h1>
+    <h1 className="titleForService">{propertyDetes[0].property_space_available} {propertyDetes[0].property_narrow_type} hosted by {hostDetes.name}</h1>
             <p id="subtitle">{propertyDetes[0].guest_capacity} guests &middot; {propertyDetes[0].rooms} bedrooms &middot; {propertyDetes[0].guest_capacity} beds &middot; {propertyDetes[0].bathrooms} bath</p>
           </div>
-          <img id='hostpic' src="../img/hostpic.jpg"></img>
+          <img id='hostpic' src={hostDetes.avatar}></img>
         </div>
         <div className="categoryList">
-          <HostedList detes={propertyDetes[0]}/>
+          <HostedList detes={propertyDetes[0]} hostDetes={hostDetes}/>
         </div>
         <div className="descriptionContainer">
           <p className="descriptionProp">{propertyDetes[0].property_description} <a href=''>read more</a></p>          

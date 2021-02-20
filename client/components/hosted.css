@@ -26,6 +26,8 @@
 .headContainer{
   display: flex;
   flex-direction: row;
+  padding-top: 48px;
+  padding-bottom: 24px;
   border-bottom: 1px solid rgb(221,221,221);
 }
 
@@ -37,10 +39,10 @@
 
 #hostpic{
   margin-left: auto;
-  margin-top: 20px;
+  margin-top: auto;
   border-radius: 50%;
-  width: 75px;
-  height:75px;
+  width: 55px;
+  height:55px;
 }
 
 .header{
