@@ -7,15 +7,9 @@
 }
 
 /* Main Service */
-<<<<<<< HEAD
 .entireContainer{
   display: flex;
   justify-content: center;
-=======
-#entirehouse{
-  display: flex;
-  margin-left: 16%;
->>>>>>> 71ccabba90c4ef5351d14340d5838fc1d442c00c
   max-width: 1128px
 }
 .titleForService{
