@@ -8,10 +8,13 @@
 
 /* Main Service */
 .entireContainer{
-  display: flex;
+  margin-left: 15%;
+  /* display: flex;
   justify-content: center;
-  max-width: 1128px
+  */
+  max-width: 1128px;
 }
+
 .titleForService{
  margin-bottom:5px;
  font-size: 17px;
