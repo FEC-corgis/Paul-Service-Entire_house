@@ -22,7 +22,7 @@ const HostedBy = (props) => {
 
   propertyDetes[0] ?
     entireHost = (
-      <div >
+      <div className="entireContainer">
         <div className="headContainer">
           <div className="header">
             <h1 className="titleForService">{propertyDetes[0].property_space_available} {propertyDetes[0].property_narrow_type} hosted by Dane</h1>
