@@ -30,16 +30,20 @@ const HostedBy = (props) => {
           </div>
           <img id='hostpic' src="../img/hostpic.jpg"></img>
         </div>
-        <hr></hr>
-        <HostedList detes={propertyDetes[0]}/>
-        <hr></hr>
-        <p className="descriptionProp">{propertyDetes[0].property_description} <a href=''>read more</a></p>          
-        <a className="descriptionProp" href=''>Contact host</a>
-      <hr></hr>
-      <h1>Sleeping arrangements</h1>
-      <hr></hr>
-      <h1>Amenities</h1>
-     </div>
+        <div className="categoryList">
+          <HostedList detes={propertyDetes[0]}/>
+        </div>
+        <div className="descriptionContainer">
+          <p className="descriptionProp">{propertyDetes[0].property_description} <a href=''>read more</a></p>          
+          <a className="descriptionProp" href=''>Contact host</a>
+       </div>
+       <div className="sleepingContainer">
+          <h1 className="titleForService">Sleeping arrangements</h1>
+       </div>
+       <div className="Amenities">
+          <h1 className="titleForService">Amenities</h1>
+       </div>
+      </div>
       ) : entireHost = null;
   
   return entireHost;
