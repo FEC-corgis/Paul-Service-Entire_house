@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import ReactDOM, { render } from 'react-dom';
 import {Route, BrowserRouter as Router} from 'react-router-dom';
 import HostedList from './hostedList.jsx';
-import {getDetes} from '../helper/api.js';
+import {getDetes, getHost} from '../helper/api.js';
 import './hosted.css';
 
 const HostedBy = (props) => {
@@ -13,11 +13,12 @@ const HostedBy = (props) => {
   const updatePropertyDetes = () => getDetes(props.match.params.id)
     .then(data => setPropertyDetes(data));
  
-  const updateHostDetes = () => getDetes(props.match.params.id)
-    .then(data => console.log(data));
+  const updateHostDetes = () => getHost(props.match.params.id)
+    .then(host => console.log('hi'));
 
   useEffect(()=>{
     updatePropertyDetes();
+    updateHostDetes();
   },[]);
 
   propertyDetes[0] ?
