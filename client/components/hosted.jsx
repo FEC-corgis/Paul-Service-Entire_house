@@ -8,7 +8,7 @@ import './hosted.css';
 const HostedBy = (props) => {
   let entireHost;
   const [propertyDetes, setPropertyDetes] = useState([]);
-  const [hostDetes, setPropertyDetes] = useState([]);
+  const [hostDetes, setHostDetes] = useState([]);
 
   const updatePropertyDetes = () => getDetes(props.match.params.id)
     .then(data => setPropertyDetes(data));
