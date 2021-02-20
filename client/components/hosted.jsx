@@ -8,9 +8,13 @@ import './hosted.css';
 const HostedBy = (props) => {
   let entireHost;
   const [propertyDetes, setPropertyDetes] = useState([]);
+  const [hostDetes, setHostDetes] = useState([]);
 
   const updatePropertyDetes = () => getDetes(props.match.params.id)
     .then(data => setPropertyDetes(data));
+ 
+  const updateHostDetes = () => getDetes(props.match.params.id)
+    .then(data => console.log(data));
 
   useEffect(()=>{
     updatePropertyDetes();
@@ -18,7 +22,7 @@ const HostedBy = (props) => {
 
   propertyDetes[0] ?
     entireHost = (
-      <div >
+      <div className="entireContainer">
         <div className="headContainer">
           <div className="header">
             <h1 className="titleForService">{propertyDetes[0].property_space_available} {propertyDetes[0].property_narrow_type} hosted by Dane</h1>
