@@ -8,8 +8,9 @@
 
 /* Main Service */
 #entirehouse{
+  display: flex;
   margin-left: 16%;
-  width: 50%;
+  max-width: 1128px
 }
 .titleForService{
  margin-bottom:5px;
