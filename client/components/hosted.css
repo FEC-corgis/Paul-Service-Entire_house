@@ -7,32 +7,48 @@
 }
 
 /* Main Service */
+<<<<<<< HEAD
 #entirehouse{
   margin-left: 16%;
   width: 50%;
+=======
+.entireContainer{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  flex-direction: column; 
+  width: 60%;
+  max-width: 1128px;
+  border-bottom: 1px solid rgb(221,221,221);
+>>>>>>> 794f8bd19b2e20ea3aadcc69bc88248a8dfa52b3
 }
+
 .titleForService{
  margin-bottom:5px;
  font-size: 17px;
  font-weight: 600;
  line-height: 17px;
 }
-
-/* .entireContainer{
-  margin-left:
-}
-*/
 .headContainer{
   display: flex;
   flex-direction: row;
+  padding-top: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgb(221,221,221);
+}
+
+.categoryList{
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgb(221,221,221);
 }
 
 #hostpic{
   margin-left: auto;
-  margin-top: 20px;
+  margin-top: auto;
   border-radius: 50%;
-  width: 75px;
-  height:75px;
+  width: 55px;
+  height:55px;
 }
 
 .header{
@@ -55,6 +71,12 @@
   line-height: 24px;
 }
 
+.descriptionContainer{
+  border-bottom: 1px solid rgb(221,221,221);
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+
 /* Categories list */
 .wordish{
   display: flex;
@@ -70,7 +92,12 @@
 .topicIcons{
   margin: 20px;
   align-self: center;
+<<<<<<< HEAD
   height: 20px;
+=======
+  height: 30px;
+  margin-left:0px;
+>>>>>>> 794f8bd19b2e20ea3aadcc69bc88248a8dfa52b3
 }
 
 .wordish p{

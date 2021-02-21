@@ -6,7 +6,7 @@ import SuperHost from './SuperHost.jsx';
 import EnhancedClean from './modals/EnhancedClean.jsx';
 import Cancellation from './modals/Cancellation.jsx'
 
-const HostedList = ({detes}) => {
+const HostedList = ({detes, hostDetes}) => {
   const [cleanIsOpen, setCleanIsOpen] = useState(false);
   // const [cancelIsOpen, setCancelIsOpen] = useState(false);
   // cancellation modal in progress
@@ -21,9 +21,7 @@ const HostedList = ({detes}) => {
   ? entireHouse = <Avail detes={detes}/>
   : entireHouse = null;
 
-  Math.random()< 0.5 ? superHost = <SuperHost/>: superHost = null;
-  // need endpoint from Dane, randomized this for now
-
+  hostDetes.isSuperhost === true ? superHost = <SuperHost hostDetes={hostDetes}/>: superHost = null;
   detes.self_check_out === 1 ? selfCheck = <SelfCheck/>: selfCheck = null;
 
   return(
