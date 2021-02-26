@@ -217,9 +217,18 @@
   font-size: 1em; 
   margin-bottom: 30px;
 }
-
+.eIcon-container{
+  padding-top:10px;
+}
 .eTopIcon{width: 40px;}
-.eIcons{width: 20px;}
+.eIcons{
+  width: 20px;
+  padding: 0px;
+}
+.eIconDescription{
+  padding-top: 10px;
+  padding-left: 10px;
+}
 
 /* Enhanced Clean modal */
 .eGrid{
@@ -227,6 +236,8 @@
   grid-template-columns: 20px auto 20px auto;
   grid-template-rows: auto auto auto;
 }
+.eGrid h4{padding-left:10px; margin-bottom: 5px;}
+.eDes{padding-left: 10px; margin-top:0px}
 
 /* Rules modal */
 .rules-container{

@@ -4,7 +4,6 @@ import Rules from './Rules.jsx';
 import SelfCheck from './SelfCheck.jsx';
 import SuperHost from './SuperHost.jsx';
 import EnhancedClean from './modals/EnhancedClean.jsx';
-import Cancellation from './modals/Cancellation.jsx'
 
 const HostedList = ({detes, hostDetes}) => {
   const [cleanIsOpen, setCleanIsOpen] = useState(false);

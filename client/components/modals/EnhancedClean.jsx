@@ -29,42 +29,42 @@ const EnhancedClean = ({cleanIsOpen, closeModal}) =>{
           </div>
            <div >
             <h4>Sanitize surfaces</h4>
-            <p>Sanitize every high-touch surface, down to the doorknow</p>
+            <p className="eDes">Sanitize every high-touch surface, down to the doorknow</p>
            </div>
            <div className="eIcon-container" >
              <img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanCheck.svg"></img>
            </div>
            <div>
             <h4>Use approved products</h4>
-            <p>Use cleaners approved by health experts, like disinfectants with 70% alcohol or higher</p>
+            <p className="eDes">Use cleaners approved by health experts, like disinfectants with 70% alcohol or higher</p>
           </div>
           <div className="eIcon-container">
             <img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanCheck.svg"></img>
           </div>
           <div >
             <h4>Thoroughly clean</h4>
-            <p>Refer to our extensive checklists while cleaning room-by-room</p>
+            <p className="eDes">Refer to our extensive checklists while cleaning room-by-room</p>
           </div>
           <div className="eIcon-container" >
             <img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanCheck.svg"></img>
           </div>
           <div >
             <h4>Wear a mask and gloves</h4>
-            <p>Help avoid cross-contamination by wearing a mask and gloves</p>
+            <p className="eDes">Help avoid cross-contamination by wearing a mask and gloves</p>
           </div>
           <div className="eIcon-container">
             <img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanCheck.svg"></img>
           </div>
           <div>
             <h4>Wash all linens</h4>
-            <p>Wash linens at a high heat setting</p>
+            <p className="eDes" >Wash linens at a high heat setting</p>
           </div>
           <div className="eIcon-container">
              <img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanCheck.svg"></img>
           </div>
           <div>
             <h4>Follow all other local guidance</h4>
-            <p>Comply with local laws, including any additional safety or cleaning guidelines</p>
+            <p className="eDes">Comply with local laws, including any additional safety or cleaning guidelines</p>
           </div>
         </div>
         <a href=''>Learn more about the 5-step process</a>

@@ -3,10 +3,10 @@ import React, {useState, useEffect, useRef} from 'react';
 const Rules = ({detes, closeModal}) =>{
   let inside = useRef();
   let selfCheck, smoking, events, pets;
-  detes.self_check_out ? selfCheck = <div className="rRows"><img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/selfcheckMo.svg"></img><p>Self check-in with lockbox</p></div>: null;
-  detes.smoking ? smoking = <div className="rRows"><img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/smoking.svg"></img><p>No Smoking</p></div>: null;
-  detes.events ? events = <div className="rRows"><img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/events.svg"></img><p>No parties or events</p></div>: null;
-  detes.pets ? pets = <div className="rRows"><img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/pets.svg"></img><p>Pets are allowed</p></div>: null;
+  detes.self_check_out ? selfCheck = <div className="rRows"><img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/selfcheckMo.svg"></img><div className="eIconDescription">Self check-in with lockbox</div></div>: null;
+  detes.smoking ? smoking = <div className="rRows"><img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/smoking.svg"></img><div className="eIconDescription">No Smoking</div></div>: null;
+  detes.events ? events = <div className="rRows"><img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/events.svg"></img><div className="eIconDescription">No parties or events</div></div>: null;
+  detes.pets ? pets = <div className="rRows"><img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/pets.svg"></img><div className="eIconDescription">Pets are allowed</div></div>: null;
 
   const handleClick = (e) => {
     if(inside.current.contains(e.target)){
@@ -28,11 +28,11 @@ const Rules = ({detes, closeModal}) =>{
          <div className="rules-container">
            <div className="rRows">
              <img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/checktime.svg"></img>
-             <p>Check-in: Before {detes.check_in_time}PM</p>
+             <div className="eIconDescription">Check-in: Before {detes.check_in_time}PM</div>
              </div>
            <div className="rRows">
             <img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/checktime.svg"></img>
-            <p>Checkout: {detes.check_out_time} PM</p>
+            <div className="eIconDescription">Checkout: {detes.check_out_time} PM</div>
          </div>
          {selfCheck}
          {smoking}
