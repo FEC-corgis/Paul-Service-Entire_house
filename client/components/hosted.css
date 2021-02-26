@@ -5,17 +5,27 @@
 *{
     font-family: 'Nunito Sans', sans-serif;
 }
-
+.stickyObj{
+  width: auto;
+  margin-left: 93px;
+  margin-top:30px;
+}
+.stickyCal{
+  width: 373px;
+}
 /* Main Service */
 .entireContainer{
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   margin: auto;
-  flex-direction: column; 
   width: 60%;
   max-width: 1128px;
 }
-
+.mainServices{
+  display: flex;
+  flex-direction: column; 
+  max-width: 653px;
+}
 .titleForService{
  margin-bottom:5px;
  font-size: 17px;

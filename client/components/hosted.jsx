@@ -24,6 +24,7 @@ const HostedBy = (props) => {
   propertyDetes[0] ?
     entireHost = (
       <div className="entireContainer">
+        <div className="mainServices">
         <div className="headContainer">
           <div className="header">
     <h1 className="titleForService">{propertyDetes[0].property_space_available} {propertyDetes[0].property_narrow_type} hosted by {hostDetes.name}</h1>
@@ -94,6 +95,11 @@ const HostedBy = (props) => {
              </div>
          </div>
        </div>
+        <img src="https://entirehouse-img.s3-us-west-1.amazonaws.com/calendar.png"></img>
+        </div>
+        <div className="stickyObj">
+          <img className="stickyCal"src="https://entirehouse-img.s3-us-west-1.amazonaws.com/stickyService.png"></img>
+        </div>
       </div>
       ) : entireHost = null;
   
