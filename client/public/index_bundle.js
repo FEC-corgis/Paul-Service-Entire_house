@@ -148,7 +148,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"gJson\": () => /* binding */ gJson,\n/* harmony export */   \"getDetes\": () => /* binding */ getDetes,\n/* harmony export */   \"getHost\": () => /* binding */ getHost\n/* harmony export */ });\nvar gJson = function gJson(url) {\n  return fetch(url).then(function (response) {\n    return response.json();\n  });\n};\nvar getDetes = function getDetes(id) {\n  return gJson(\"http://54.176.104.176:5545/propertyDetails/\".concat(id));\n};\nvar getHost = function getHost(id) {\n  return gJson(\"http://54.193.201.191:5000/api/hostedByService/\".concat(id));\n};\n\n//# sourceURL=webpack:///./client/helper/api.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"gJson\": () => /* binding */ gJson,\n/* harmony export */   \"getDetes\": () => /* binding */ getDetes,\n/* harmony export */   \"getHost\": () => /* binding */ getHost\n/* harmony export */ });\nvar gJson = function gJson(url) {\n  return fetch(url).then(function (response) {\n    return response.json();\n  });\n};\nvar getDetes = function getDetes(id) {\n  return gJson(\"http://13.56.218.102:5545/propertyDetails/\".concat(id));\n};\nvar getHost = function getHost(id) {\n  return gJson(\"http://50.18.113.184:5000/api/hostedByService/\".concat(id));\n};\n\n//# sourceURL=webpack:///./client/helper/api.js?");
 
 /***/ }),
 
