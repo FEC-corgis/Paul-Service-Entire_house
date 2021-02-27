@@ -70,8 +70,9 @@
 
 .descriptionProp{
   font-size: 16px;
-  font-weight: 400px;
+  font-weight: 600px;
   line-height: 24px;
+  color: rgb(34, 34, 34);
 }
 
 .descriptionContainer{
@@ -189,6 +190,7 @@
   border: none;
   background: none;
   font-size: 1em;
+  color: rgb(34, 34, 34);
 }
 
 .modal-overlay{

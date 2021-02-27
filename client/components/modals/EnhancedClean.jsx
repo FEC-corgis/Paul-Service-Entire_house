@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 
-const EnhancedClean = ({cleanIsOpen, closeModal}) =>{
+const EnhancedClean = ({closeModal, hostDetes}) =>{
   const inside = useRef();
   const handleClick = (e) => {
     if(inside.current.contains(e.target)){
@@ -8,6 +8,7 @@ const EnhancedClean = ({cleanIsOpen, closeModal}) =>{
     }
     closeModal();
   }
+  console.log(hostDetes);
   useEffect(()=> {
     const getClick = document.addEventListener('click', handleClick)
     return () => getClick();
@@ -21,7 +22,7 @@ const EnhancedClean = ({cleanIsOpen, closeModal}) =>{
             <img src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanIcon.svg"></img>
           </div>
           <h3>Enhanced Clean</h3>
-          <p>Dane committed to Airbnb's 5-step enhanced cleaning process– a set of standards developed in partnership with experts, for the times of COVID-19 and beyond.</p>
+          <p>{hostDetes.name} committed to Airbnb's 5-step enhanced cleaning process– a set of standards developed in partnership with experts, for the times of COVID-19 and beyond.</p>
           <p>Here's what Dane committed to doing before every stay:</p>
        <div className="eGrid">  
           <div className="eIcon-container">

@@ -7,8 +7,6 @@ import EnhancedClean from './modals/EnhancedClean.jsx';
 
 const HostedList = ({detes, hostDetes}) => {
   const [cleanIsOpen, setCleanIsOpen] = useState(false);
-  // const [cancelIsOpen, setCancelIsOpen] = useState(false);
-  // cancellation modal in progress
  
   const closeModal = () =>{
     setCleanIsOpen(false);
@@ -35,7 +33,7 @@ const HostedList = ({detes, hostDetes}) => {
       <p>This host commited to Airbnb's 5-step enhanced cleaning process. <button onClick={()=>setCleanIsOpen(!cleanIsOpen)} className="modalbtn">Learn more.</button></p>
      </div>
     </div>
-      {cleanIsOpen ? (<EnhancedClean closeModal={closeModal}/>): null}
+      {cleanIsOpen ? (<EnhancedClean closeModal={closeModal} hostDetes={hostDetes}/>): null}
     <div>
       {superHost}
     </div>
@@ -49,7 +47,6 @@ const HostedList = ({detes, hostDetes}) => {
       <p>Add your trip dates to get the cancellation details for this stay.</p>     
       </div>
     </div>
-    {/* {cancelIsOpen ? (<Modal detes=/>): null} */}
     <div>
       <Rules detes={detes}/>
     </div>

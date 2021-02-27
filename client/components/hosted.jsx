@@ -36,7 +36,7 @@ const HostedBy = (props) => {
           <HostedList detes={propertyDetes[0]} hostDetes={hostDetes}/>
         </div>
         <div className="descriptionContainer">
-          <p className="descriptionProp">{propertyDetes[0].property_description} <a href=''>read more</a></p>          
+          <p className="descriptionProp">{propertyDetes[0].property_description} <a className="descriptionProp" href=''>read more</a></p>          
           <a className="descriptionProp" href=''>Contact host</a>
        </div>
        <div className="sleepingContainer">
@@ -91,7 +91,7 @@ const HostedBy = (props) => {
                <img className="hardcodeIMG" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/fireextingusiher.svg"></img>
              </div>
              <div className="showAllAmenContainer">
-               <a href="">Show all 29 amenities</a>
+               <a className="descriptionProp" href="">Show all 29 amenities</a>
              </div>
          </div>
        </div>
