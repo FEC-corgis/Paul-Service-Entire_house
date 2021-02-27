@@ -23,7 +23,7 @@ const EnhancedClean = ({closeModal, hostDetes}) =>{
           </div>
           <h3>Enhanced Clean</h3>
           <p>{hostDetes.name} committed to Airbnb's 5-step enhanced cleaning process– a set of standards developed in partnership with experts, for the times of COVID-19 and beyond.</p>
-          <p>Here's what Dane committed to doing before every stay:</p>
+          <p>Here's what {hostDetes.name} committed to doing before every stay:</p>
        <div className="eGrid">  
           <div className="eIcon-container">
             <img className="eIcons" src="https://entirehouse-img.s3-us-west-1.amazonaws.com/EnhancedCleanCheck.svg"></img>
